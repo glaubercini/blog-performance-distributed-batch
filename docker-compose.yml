@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  simplebatchrunner:
+    image: ${DOCKER_REGISTRY-}simplebatchrunner
+    build:
+      context: .
+      dockerfile: SimpleBatchRunner/Dockerfile
+    environment:
+      DB_ADDRESS: ${DOCKER_GATEWAY_HOST:-host.docker.internal}
